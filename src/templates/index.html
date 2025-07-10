@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermart Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-bars toggle-btn" onclick="toggleSidebar()"><span>Supermart</span></i>
+                
+            </div>
+            <ul class="sidebar-menu">
+                <!-- Main menu items -->
+                <li><a href="#" onclick="loadPage('/dashboard')"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+                <li><a href="#" onclick="loadPage('/category')"><i class="fas fa-th-large"></i><span>Product Category</span></a></li>
+                <li><a href="#" onclick="loadPage('/sales')"><i class="fas fa-chart-bar"></i> <span>Sales Analysis</span></a></li>
+                <li><a href="#" onclick="loadPage('/customer')"><i class="fas fa-users"></i> <span>Customer Insights</span></a></li>
+                <li><a href="#" onclick="loadPage('/geo_forecast')"><i class="fas fa-map-marked-alt"></i> <span>Geo & Forecasting</span></a></li>
+
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <iframe src="/dashboard/" frameborder="0" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Sidebar
+        function toggleSidebar() {
+            // document.querySelector('.sidebar').classList.toggle('collapsed');
+        }
+    </script>
+    <script>
+        function loadPage(path) {
+            const iframe = document.querySelector('.main-content iframe');
+            iframe.src = path;
+        }
+    
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('collapsed');
+        }
+    </script>
+    
+    
+</body>
+</html>
